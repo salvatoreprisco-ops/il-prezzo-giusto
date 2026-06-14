@@ -3,102 +3,287 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Il prezzo giusto esiste. Sta per arrivare un modo per trovarlo.</title>
-<meta name="description" content="Stessi prodotti, prezzi diversi anche del 40% tra i negozi online. Sta arrivando un'app che ti dice dove costa meno. Gratis, senza pubblicità.">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Il prezzo giusto esiste.">
-<meta property="og:description" content="Sta arrivando un'app che ti dice dove costa meno. Gratis, senza pubblicità.">
-<meta property="og:type" content="website">
+<title>Confronta i prezzi dei prodotti di salute e benessere</title>
+<meta name="description" content="Lo stesso prodotto costa fino al 40% in meno cambiando negozio online. Confrontiamo i prezzi e ti mostriamo dove costa meno.">
 <style>
-  :root {
-    --green: #0a7d4a;
-    --green-dark: #075c37;
-    --ink: #15201b;
-    --muted: #5b6b63;
-    --bg: #f6f8f7;
-    --card: #ffffff;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    background: var(--bg); color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 48px 24px 64px; }
-  .badge {
-    display: inline-block; background: #e7f3ed; color: var(--green-dark);
-    font-size: 13px; font-weight: 800; letter-spacing: .04em;
-    padding: 6px 14px; border-radius: 999px; text-transform: uppercase;
-  }
-  h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.12; margin-top: 20px; letter-spacing: -.02em; }
-  h1 em { font-style: normal; color: var(--green); }
-  .sub { color: var(--muted); font-size: 18px; line-height: 1.55; margin-top: 18px; max-width: 54ch; }
-  .demo {
-    margin-top: 36px; background: var(--card); border-radius: 18px;
-    padding: 22px; box-shadow: 0 8px 30px rgba(10,40,25,.08);
-  }
-  .demo .label { font-size: 13px; color: var(--muted); font-weight: 700; margin-bottom: 12px; }
-  .rowp { display: flex; justify-content: space-between; align-items: baseline; padding: 9px 0; border-bottom: 1px solid #eef2f0; font-size: 16px; }
-  .rowp:last-child { border-bottom: 0; }
-  .rowp .shop { color: var(--muted); }
-  .rowp .price { font-variant-numeric: tabular-nums; font-weight: 700; }
-  .rowp.best .shop { color: var(--green-dark); font-weight: 800; }
-  .rowp.best .price { color: var(--green); font-size: 19px; }
-  .rowp.best .tag { font-size: 12px; background: var(--green); color: #fff; border-radius: 999px; padding: 2px 9px; margin-left: 8px; font-weight: 800; vertical-align: 2px; }
-  .points { margin-top: 36px; display: grid; gap: 14px; }
-  .point { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.5; }
-  .point .ico { flex: 0 0 auto; width: 28px; height: 28px; border-radius: 8px; background: #e7f3ed; display: grid; place-items: center; font-size: 15px; }
-  .point b { font-weight: 800; }
-  .cta {
-    margin-top: 40px; background: var(--card); border-radius: 18px; padding: 26px;
-    box-shadow: 0 8px 30px rgba(10,40,25,.08); text-align: center;
-  }
-  .cta h2 { font-size: 22px; letter-spacing: -.01em; }
-  .cta p { color: var(--muted); margin-top: 8px; font-size: 15px; line-height: 1.5; }
-  .soon {
-    display: inline-block; margin-top: 16px; background: var(--green); color: #fff;
-    font-weight: 800; font-size: 16px; padding: 13px 26px; border-radius: 999px;
-  }
-  footer { margin-top: 48px; text-align: center; color: #8a978f; font-size: 12.5px; line-height: 1.6; }
+:root{--g:#0a8f5b;--g2:#0a6e47;--ink:#13241d;--mut:#5c6b64;--bg:#f6faf8;--card:#fff;--line:#e6efe9}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font-weight:800;font-size:20px;color:var(--g)}
+.lang button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;font-weight:700;color:var(--mut);cursor:pointer}
+.lang button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.hero{text-align:center;padding:46px 0 30px}
+.hero h1{font-size:34px;line-height:1.15;margin:.2em 0;letter-spacing:-.5px}
+.hero p{font-size:18px;color:var(--mut);max-width:620px;margin:.4em auto 1.2em}
+.search{display:flex;max-width:540px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 6px 24px rgba(10,143,91,.08)}
+.search input{flex:1;border:0;padding:12px 14px;font-size:16px;outline:none;background:transparent}
+.search button{background:var(--g);color:#fff;border:0;border-radius:10px;padding:0 20px;font-weight:700;font-size:15px;cursor:pointer}
+.steps{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:26px 0 8px}
+.step{flex:1;min-width:220px;max-width:300px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.step b{color:var(--g)}
+.section-t{font-size:22px;font-weight:800;margin:36px 0 6px;text-align:center}
+.section-s{color:var(--mut);text-align:center;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:150px;object-fit:contain;background:#fff;padding:12px}
+.card-b{padding:12px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:14px;margin:0;line-height:1.3;min-height:36px}
+.rating{color:#f5a623;font-size:13px}.rating span{color:var(--mut)}
+.price b{font-size:20px;color:var(--g2)}.price s{color:#a7b3ad;margin-left:6px;font-size:13px}
+.from{color:var(--mut);font-size:13px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;font-size:13px;color:var(--mut)}
+.save{background:#e9f8f0;color:var(--g2);font-weight:800;border-radius:8px;padding:3px 8px}
+.stat{text-align:center;color:var(--mut);margin:24px 0}
+.stat b{color:var(--ink);font-size:22px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0;color:var(--mut);font-size:13px;text-align:center}
+@media(max-width:560px){.hero h1{font-size:27px}}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <span class="badge">In arrivo · estate 2026</span>
-    <h1>Lo stesso identico prodotto.<br>Prezzi diversi <em>anche del 40%</em>.</h1>
-    <p class="sub">
-      Tra i negozi online lo stesso articolo — stessa marca, stessa confezione —
-      può costare molto meno di dove lo compri di solito. Il problema è che
-      controllare ogni negozio, ogni volta, è un lavoro. Stiamo per toglierti
-      quel lavoro: <strong>un'app che ti dice dove costa meno</strong>.
-    </p>
+<div class="wrap">
+  <header>
+    <div class="logo" data-i18n="brand">il prezzo giusto</div>
+    <div class="lang"><button data-l="it" class="on" onclick="setLang('it')">IT</button><button data-l="en" onclick="setLang('en')">EN</button></div>
+  </header>
 
-    <div class="demo" aria-label="Esempio di confronto prezzi">
-      <div class="label">Esempio reale di uno stesso prodotto, oggi:</div>
-      <div class="rowp best"><span class="shop">Negozio A <span class="tag">il più conveniente</span></span><span class="price">5,50 €</span></div>
-      <div class="rowp"><span class="shop">Negozio B</span><span class="price">6,20 €</span></div>
-      <div class="rowp"><span class="shop">Negozio C</span><span class="price">7,40 €</span></div>
-      <div class="rowp"><span class="shop">Negozio D</span><span class="price">7,90 €</span></div>
-    </div>
+  <section class="hero">
+    <h1 data-i18n="h1">Lo stesso prodotto, prezzi diversi.<br>Noi troviamo il più basso.</h1>
+    <p data-i18n="sub">Salute, parafarmacia e benessere: i prezzi cambiano fino al 40% tra i negozi online. Confronta e paga il giusto.</p>
+    <form class="search" onsubmit="return false">
+      <input type="text" data-i18n-ph="ph" placeholder="Cerca un prodotto…">
+      <button data-i18n="cta">Confronta</button>
+    </form>
+  </section>
 
-    <div class="points">
-      <div class="point"><span class="ico">🔍</span><span><b>Cerchi un prodotto, vedi subito dove costa meno.</b> Prezzi confrontati sui negozi online, aggiornati.</span></div>
-      <div class="point"><span class="ico">📉</span><span><b>Sai se è il momento giusto per comprare.</b> Ti diciamo se il prezzo di oggi è davvero un minimo o se conviene aspettare.</span></div>
-      <div class="point"><span class="ico">🤝</span><span><b>Gratis e senza pubblicità.</b> Nessun banner, nessuna classifica comprata: solo il prezzo più basso, davvero.</span></div>
-    </div>
-
-    <div class="cta">
-      <h2>Stiamo arrivando.</h2>
-      <p>L'app è in fase di test. Quando apriremo la beta, chi ci segue
-         entrerà per primo.</p>
-      <span class="soon">Disponibile a breve</span>
-    </div>
-
-    <footer>
-      © 2026 — Tutti i diritti riservati.<br>
-      I prezzi mostrati sono un esempio illustrativo. Il prezzo definitivo è
-      sempre quello indicato dal venditore al momento dell'acquisto.
-    </footer>
+  <div class="steps">
+    <div class="step"><b>1.</b> <span data-i18n="s1">Cerca il prodotto che ti serve.</span></div>
+    <div class="step"><b>2.</b> <span data-i18n="s2">Confrontiamo i prezzi dei negozi online.</span></div>
+    <div class="step"><b>3.</b> <span data-i18n="s3">Ti mostriamo dove costa meno.</span></div>
   </div>
+
+  <h2 class="section-t" data-i18n="cmp">Confronti di oggi</h2>
+  <p class="section-s" data-i18n="cmps">Prezzi reali rilevati dai negozi online.</p>
+  <div class="grid">
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/256/340/41/IT025634041-p1.jpg" alt="NUROFEN 200 mg compresse rivestite" loading="lazy">
+        <div class="card-b">
+          <h3>NUROFEN 200 mg compresse rivestite</h3>
+          <div class="rating">★★★★★ <span>4.9</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>5,79 €</b>
+            <s>8,99 €</s></div>
+          <div class="meta"><span class="save">-36%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://meafarma.it/image/cache/catalog/921131898%201-500x500.jpg" alt="Bioderma Sensibio H2O 500 ml Acqua Micellare per Pelli Sensibili" loading="lazy">
+        <div class="card-b">
+          <h3>Bioderma Sensibio H2O 500 ml Acqua Micellare per Pelli Sensibili</h3>
+          <div class="rating"> <span></span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>9,18 €</b>
+            <s>13,59 €</s></div>
+          <div class="meta"><span class="save">-32%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://meafarma.it/image/cache/catalog/023673104%202-500x500.jpg" alt="Imodium Diarrea Acuta 12 Capsule Molli Per Intestino" loading="lazy">
+        <div class="card-b">
+          <h3>Imodium Diarrea Acuta 12 Capsule Molli Per Intestino</h3>
+          <div class="rating">★★★★☆ <span>4.3</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>10,35 €</b>
+            <s>14,89 €</s></div>
+          <div class="meta"><span class="save">-30%</span>
+            <span>4 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/356/180/38/IT035618038-p1.jpg" alt="MomentAct 400 mg 10 Capsule Molli Ibuprofene Antinfiammatorio" loading="lazy">
+        <div class="card-b">
+          <h3>MomentAct 400 mg 10 Capsule Molli Ibuprofene Antinfiammatorio</h3>
+          <div class="rating">★★★★★ <span>4.9</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>6,99 €</b>
+            <s>9,99 €</s></div>
+          <div class="meta"><span class="save">-30%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/238/340/68/IT023834068-p1.jpg" alt="Fluifort 9% Carbocisteina Sciroppo Mucolitico 200 ml Con Misurino" loading="lazy">
+        <div class="card-b">
+          <h3>Fluifort 9% Carbocisteina Sciroppo Mucolitico 200 ml Con Misurino</h3>
+          <div class="rating">★★★★★ <span>4.8</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>7,49 €</b>
+            <s>10,59 €</s></div>
+          <div class="meta"><span class="save">-29%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/349/361/71/IT034936171-p1.jpg" alt="Fluimucil Mucolitico 600 mg Compresse Effervescenti Aroma Limone" loading="lazy">
+        <div class="card-b">
+          <h3>Fluimucil Mucolitico 600 mg Compresse Effervescenti Aroma Limone</h3>
+          <div class="rating"> <span></span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>7,14 €</b>
+            <s>9,69 €</s></div>
+          <div class="meta"><span class="save">-26%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT9/356/625/97/IT935662597-p10.jpg" alt="Supradyn Ricarica Integratore 30 Compresse Multivitaminico e Minerali" loading="lazy">
+        <div class="card-b">
+          <h3>Supradyn Ricarica Integratore 30 Compresse Multivitaminico e Minerali</h3>
+          <div class="rating">★★★★★ <span>4.9</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>14,75 €</b>
+            <s>19,39 €</s></div>
+          <div class="meta"><span class="save">-24%</span>
+            <span>6 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://www.farmaciasoccavo.it/media/catalog/product/H/0/H0000635.jpg" alt="Voltadol 10 Cerotti Medicati 140 mg Diclofenac Sodico" loading="lazy">
+        <div class="card-b">
+          <h3>Voltadol 10 Cerotti Medicati 140 mg Diclofenac Sodico</h3>
+          <div class="rating">★★★★★ <span>4.7</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>16,45 €</b>
+            <s>21,54 €</s></div>
+          <div class="meta"><span class="save">-24%</span>
+            <span>4 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/421/540/29/IT042154029-p1.jpg" alt="Lasonil Antidolore Gel 10% - Gel antidolorifico per traumi muscolari ed articolari - 120 g" loading="lazy">
+        <div class="card-b">
+          <h3>Lasonil Antidolore Gel 10% - Gel antidolorifico per traumi muscolari ed articolari - 120 g</h3>
+          <div class="rating">★★★★★ <span>4.9</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>10,39 €</b>
+            <s>13,47 €</s></div>
+          <div class="meta"><span class="save">-23%</span>
+            <span>4 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://www.farmaciasoccavo.it/media/catalog/product/1/3/13046040_1_1.jpg" alt="Enterogermina 2 Miliardi 20 Flaconcini Fermenti Lattici" loading="lazy">
+        <div class="card-b">
+          <h3>Enterogermina 2 Miliardi 20 Flaconcini Fermenti Lattici</h3>
+          <div class="rating">★★★★★ <span>4.9</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>18,09 €</b>
+            <s>23,03 €</s></div>
+          <div class="meta"><span class="save">-21%</span>
+            <span>4 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/421/540/17/IT042154017-p1.jpg" alt="Lasonil Antidolorifico e Antinfiammatorio contro Dolore 50 g" loading="lazy">
+        <div class="card-b">
+          <h3>Lasonil Antidolorifico e Antinfiammatorio contro Dolore 50 g</h3>
+          <div class="rating"> <span></span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>7,47 €</b>
+            <s>9,49 €</s></div>
+          <div class="meta"><span class="save">-21%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT9/741/092/01/IT974109201-p1.jpg" alt="Cerave Lozione Idratante Pelle Normale/Secca Idratazione 24 Ore 236ml" loading="lazy">
+        <div class="card-b">
+          <h3>Cerave Lozione Idratante Pelle Normale/Secca Idratazione 24 Ore 236ml</h3>
+          <div class="rating">★★★★★ <span>5.0</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>10,79 €</b>
+            <s>13,57 €</s></div>
+          <div class="meta"><span class="save">-20%</span>
+            <span>4 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://www.farmaciasoccavo.it/media/catalog/product/4/_/4_3_8.jpg" alt="Tachipirina 120 mg/ 5 ml Sciroppo Azione Analgesica ed Antipiretica" loading="lazy">
+        <div class="card-b">
+          <h3>Tachipirina 120 mg/ 5 ml Sciroppo Azione Analgesica ed Antipiretica</h3>
+          <div class="rating">★★★★★ <span>5.0</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>5,99 €</b>
+            <s>7,49 €</s></div>
+          <div class="meta"><span class="save">-20%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/005/900/51/IT000590051-p1.jpg" alt="Rinazina Spray Nasale 15 ml 0,1%" loading="lazy">
+        <div class="card-b">
+          <h3>Rinazina Spray Nasale 15 ml 0,1%</h3>
+          <div class="rating">★★★★★ <span>4.9</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>10,09 €</b>
+            <s>12,22 €</s></div>
+          <div class="meta"><span class="save">-17%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://www.farmaciasoccavo.it/media/catalog/product/7/_/7_3_20.jpg" alt="Tachifludec 10 Bustine Limone" loading="lazy">
+        <div class="card-b">
+          <h3>Tachifludec 10 Bustine Limone</h3>
+          <div class="rating">★★★★★ <span>4.6</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>6,29 €</b>
+            <s>7,61 €</s></div>
+          <div class="meta"><span class="save">-17%</span>
+            <span>3 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/294/540/42/IT029454042-p1.jpg" alt="Buscopan Compositum - Contro dolori forti e crampi addominali - 20 Compresse Rivestite" loading="lazy">
+        <div class="card-b">
+          <h3>Buscopan Compositum - Contro dolori forti e crampi addominali - 20 Compresse Rivestite</h3>
+          <div class="rating">★★★★★ <span>5.0</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>11,45 €</b>
+            <s>13,74 €</s></div>
+          <div class="meta"><span class="save">-17%</span>
+            <span>4 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://cdn.redcare.it/images/IT0/207/020/80/IT020702080-p1.jpg" alt="Maalox Plus contro bruciore, cattiva digestione, iperacidità di stomaco, 30 compresse" loading="lazy">
+        <div class="card-b">
+          <h3>Maalox Plus contro bruciore, cattiva digestione, iperacidità di stomaco, 30 compresse</h3>
+          <div class="rating">★★★★★ <span>4.8</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>10,01 €</b>
+            <s>11,91 €</s></div>
+          <div class="meta"><span class="save">-16%</span>
+            <span>5 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://www.farmaciasoccavo.it/media/catalog/product/1/_/1_51.jpg" alt="Enterolactis Plus 30 Capsule Integratore Fermenti Lattici" loading="lazy">
+        <div class="card-b">
+          <h3>Enterolactis Plus 30 Capsule Integratore Fermenti Lattici</h3>
+          <div class="rating">★★★★★ <span>4.9</span></div>
+          <div class="price"><span class="from" data-i18n="from">da</span> <b>19,00 €</b>
+            <s>22,17 €</s></div>
+          <div class="meta"><span class="save">-14%</span>
+            <span>5 <span data-i18n="shops">farmacie</span></span></div>
+        </div>
+      </article>
+  </div>
+
+  <p class="stat"><b>372</b> <span data-i18n="prod">prodotti confrontati in</span> <b>32</b> <span data-i18n="shopslong">negozi online</span></p>
+
+  <footer>
+    <p data-i18n="foot">Confrontiamo i prezzi pubblici di negozi online di salute e benessere. I prezzi possono variare: verifica sempre sul sito del venditore.</p>
+  </footer>
+</div>
+<script>
+var I18N={
+ it:{brand:"il prezzo giusto",h1:"Lo stesso prodotto, prezzi diversi.<br>Noi troviamo il più basso.",sub:"Salute, parafarmacia e benessere: i prezzi cambiano fino al 40% tra i negozi online. Confronta e paga il giusto.",ph:"Cerca un prodotto…",cta:"Confronta",s1:"Cerca il prodotto che ti serve.",s2:"Confrontiamo i prezzi dei negozi online.",s3:"Ti mostriamo dove costa meno.",cmp:"Confronti di oggi",cmps:"Prezzi reali rilevati dai negozi online.",from:"da",shops:"negozi",prod:"prodotti confrontati in",shopslong:"negozi online",foot:"Confrontiamo i prezzi pubblici di negozi online di salute e benessere. I prezzi possono variare: verifica sempre sul sito del venditore."},
+ en:{brand:"the right price",h1:"Same product, different prices.<br>We find the lowest one.",sub:"Health, pharmacy and wellness: prices vary by up to 40% across online shops. Compare and pay the right price.",ph:"Search a product…",cta:"Compare",s1:"Search the product you need.",s2:"We compare prices across online shops.",s3:"We show you where it costs less.",cmp:"Today's comparisons",cmps:"Real prices collected from online shops.",from:"from",shops:"shops",prod:"products compared across",shopslong:"online shops",foot:"We compare public prices of health & wellness online shops. Prices may change: always check on the seller's website."}
+};
+function setLang(l){
+ document.documentElement.lang=l;
+ document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});
+ var d=I18N[l];
+ document.querySelectorAll('[data-i18n]').forEach(function(e){var k=e.getAttribute('data-i18n');if(d[k]!=null)e.innerHTML=d[k]});
+ document.querySelectorAll('[data-i18n-ph]').forEach(function(e){var k=e.getAttribute('data-i18n-ph');if(d[k]!=null)e.placeholder=d[k]});
+}
+setLang((navigator.language||'it').slice(0,2)==='en'?'en':'it');
+</script>
 </body>
 </html>
