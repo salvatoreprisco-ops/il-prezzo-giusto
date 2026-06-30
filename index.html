@@ -1,289 +1,408 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Confronta i prezzi dei prodotti di salute e benessere</title>
-<meta name="description" content="Lo stesso prodotto costa fino al 40% in meno cambiando negozio online. Confrontiamo i prezzi e ti mostriamo dove costa meno.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spendomeno — Trova il prezzo più basso, su tutto</title>
+<meta name="description" content="Spendomeno confronta i prezzi di centinaia di negozi online e costruisce per te il carrello che costa meno. Iscriviti alla lista d'attesa per l'accesso anticipato." />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="Spendomeno — Trova il prezzo più basso, su tutto" />
+<meta property="og:description" content="Confronta i prezzi di tanti negozi online e ottieni il carrello più conveniente. Lista d'attesa aperta." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#04110d" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-:root{--g:#0a8f5b;--g2:#0a6e47;--ink:#13241d;--mut:#5c6b64;--bg:#f6faf8;--card:#fff;--line:#e6efe9}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
-.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
-header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
-.logo{font-weight:800;font-size:20px;color:var(--g)}
-.lang button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;font-weight:700;color:var(--mut);cursor:pointer}
-.lang button.on{background:var(--g);color:#fff;border-color:var(--g)}
-.hero{text-align:center;padding:46px 0 30px}
-.hero h1{font-size:34px;line-height:1.15;margin:.2em 0;letter-spacing:-.5px}
-.hero p{font-size:18px;color:var(--mut);max-width:620px;margin:.4em auto 1.2em}
-.search{display:flex;max-width:540px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 6px 24px rgba(10,143,91,.08)}
-.search input{flex:1;border:0;padding:12px 14px;font-size:16px;outline:none;background:transparent}
-.search button{background:var(--g);color:#fff;border:0;border-radius:10px;padding:0 20px;font-weight:700;font-size:15px;cursor:pointer}
-.steps{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:26px 0 8px}
-.step{flex:1;min-width:220px;max-width:300px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-.step b{color:var(--g)}
-.section-t{font-size:22px;font-weight:800;margin:36px 0 6px;text-align:center}
-.section-s{color:var(--mut);text-align:center;margin:0 0 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.card img{width:100%;height:150px;object-fit:contain;background:#fff;padding:12px}
-.card-b{padding:12px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.card h3{font-size:14px;margin:0;line-height:1.3;min-height:36px}
-.rating{color:#f5a623;font-size:13px}.rating span{color:var(--mut)}
-.price b{font-size:20px;color:var(--g2)}.price s{color:#a7b3ad;margin-left:6px;font-size:13px}
-.from{color:var(--mut);font-size:13px}
-.meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;font-size:13px;color:var(--mut)}
-.save{background:#e9f8f0;color:var(--g2);font-weight:800;border-radius:8px;padding:3px 8px}
-.stat{text-align:center;color:var(--mut);margin:24px 0}
-.stat b{color:var(--ink);font-size:22px}
-footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0;color:var(--mut);font-size:13px;text-align:center}
-@media(max-width:560px){.hero h1{font-size:27px}}
+  :root{
+    --primary:#10b981; --primary-2:#34d399; --primary-700:#059669;
+    --accent:#fbbf24; --accent-2:#f59e0b;
+    --bg:#04110d; --bg-2:#071a14;
+    --fg:#eafaf4; --fg-soft:#9fc7b8; --fg-dim:#6f9488;
+    --glass:rgba(255,255,255,.05); --glass-strong:rgba(255,255,255,.08);
+    --border:rgba(255,255,255,.10); --border-2:rgba(255,255,255,.16);
+    --radius:20px; --maxw:1120px;
+    --ring:#34d399;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Nunito Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px; line-height:1.65; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Sora",system-ui,sans-serif;line-height:1.1;margin:0 0 .4em;letter-spacing:-.02em}
+  p{margin:0 0 1em;color:var(--fg-soft)}
+  a{color:var(--primary-2);text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative;z-index:2}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  a.skip{position:absolute;left:-9999px;top:0;background:var(--primary);color:#04110d;padding:10px 14px;border-radius:10px;z-index:200;font-weight:700}
+  a.skip:focus{left:12px;top:12px}
+
+  /* ===== Aurora background ===== */
+  .aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;will-change:transform}
+  .b1{width:60vw;height:60vw;left:-15vw;top:-20vw;background:radial-gradient(circle at 30% 30%,#0f6b50,#04110d 70%);animation:drift1 22s ease-in-out infinite alternate}
+  .b2{width:50vw;height:50vw;right:-15vw;top:5vw;background:radial-gradient(circle at 60% 40%,#0a5d7a,#04110d 70%);animation:drift2 26s ease-in-out infinite alternate}
+  .b3{width:46vw;height:46vw;left:20vw;bottom:-20vw;background:radial-gradient(circle at 50% 50%,#7a5a0a,#04110d 72%);opacity:.35;animation:drift3 30s ease-in-out infinite alternate}
+  @keyframes drift1{to{transform:translate3d(6vw,4vw,0) scale(1.1)}}
+  @keyframes drift2{to{transform:translate3d(-5vw,6vw,0) scale(1.12)}}
+  @keyframes drift3{to{transform:translate3d(4vw,-5vw,0) scale(1.08)}}
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* ===== Header ===== */
+  header{position:sticky;top:0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+  header.scrolled{background:rgba(4,17,13,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Sora";font-weight:800;font-size:1.22rem;color:var(--fg)}
+  .brand .logo{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;color:#04110d;
+    background:linear-gradient(135deg,var(--primary-2),var(--primary-700));box-shadow:0 6px 20px rgba(16,185,129,.35)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-family:"Sora";font-size:1rem;
+    border:0;border-radius:14px;padding:13px 22px;min-height:50px;cursor:pointer;transition:transform .15s,box-shadow .25s,background .25s,filter .25s}
+  .btn:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+  .btn-primary{color:#04110d;background:linear-gradient(135deg,var(--primary-2),var(--primary-700));box-shadow:0 10px 30px rgba(16,185,129,.32)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(16,185,129,.45)}
+  .btn-accent{color:#1a1203;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 10px 30px rgba(251,191,36,.3)}
+  .btn-accent:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(251,191,36,.45)}
+  .btn-ghost{background:var(--glass);color:var(--fg);border:1px solid var(--border-2)}
+  .btn-ghost:hover{background:var(--glass-strong)}
+  .nav .btn{display:none}
+  @media(min-width:640px){.nav .btn{display:inline-flex}}
+
+  /* ===== Hero ===== */
+  .hero{padding:70px 0 50px}
+  .hero-grid{display:grid;gap:44px;grid-template-columns:1fr;align-items:center}
+  @media(min-width:960px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+  .badge{display:inline-flex;align-items:center;gap:9px;background:var(--glass);border:1px solid var(--border-2);
+    color:var(--primary-2);font-weight:700;font-size:.85rem;padding:8px 15px;border-radius:999px;margin-bottom:22px}
+  .badge .pulse{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(251,191,36,.6);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(251,191,36,.5)}70%{box-shadow:0 0 0 9px rgba(251,191,36,0)}100%{box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+  .hero h1{font-size:clamp(2.3rem,6.4vw,4rem);font-weight:800}
+  .grad{background:linear-gradient(110deg,var(--primary-2) 10%,var(--accent) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:clamp(1.08rem,2.4vw,1.3rem);max-width:40ch;color:var(--fg-soft)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+  /* Form */
+  .form{display:flex;flex-direction:column;gap:11px;max-width:480px;margin-top:26px}
+  @media(min-width:540px){.form{flex-direction:row}}
+  .field{flex:1;position:relative}
+  .form input[type=email]{width:100%;min-height:54px;padding:14px 18px;font-size:1rem;color:var(--fg);
+    background:var(--glass-strong);border:1.5px solid var(--border-2);border-radius:14px;font-family:inherit}
+  .form input[type=email]::placeholder{color:var(--fg-dim)}
+  .form input[type=email]:focus-visible{outline:3px solid var(--ring);outline-offset:1px;border-color:var(--primary-2)}
+  .form .btn{min-height:54px;white-space:nowrap}
+  .form-help{font-size:.86rem;color:var(--fg-dim);margin:10px 0 0}
+  .form-ok{display:none;align-items:center;gap:10px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.4);
+    color:var(--primary-2);border-radius:14px;padding:14px 16px;margin-top:14px;font-weight:700;max-width:480px}
+  .form-ok svg{flex:none}
+  .proof{display:flex;align-items:center;gap:12px;margin-top:24px;color:var(--fg-soft);font-size:.95rem}
+  .avs{display:flex}
+  .avs span{width:32px;height:32px;border-radius:50%;border:2px solid var(--bg-2);margin-left:-9px;display:grid;place-items:center;
+    color:#04110d;font-weight:800;font-size:.78rem;font-family:"Sora";background:linear-gradient(135deg,var(--primary-2),var(--primary-700))}
+  .avs span:nth-child(2){background:linear-gradient(135deg,#5eead4,#14b8a6)}
+  .avs span:nth-child(3){background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#1a1203}
+  .avs span:first-child{margin-left:0}
+
+  /* ===== Hero mock (price comparison card) ===== */
+  .mock{position:relative;perspective:1400px}
+  .mock-card{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--border-2);
+    border-radius:24px;padding:22px;box-shadow:0 30px 70px rgba(0,0,0,.5);backdrop-filter:blur(12px);
+    transform:rotateY(-9deg) rotateX(5deg);transition:transform .4s ease}
+  .mock:hover .mock-card{transform:rotateY(0) rotateX(0)}
+  .mock-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .mock-top .t{font-family:"Sora";font-weight:700;font-size:1.02rem}
+  .chip{font-size:.74rem;font-weight:700;color:var(--accent);background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.35);padding:5px 10px;border-radius:999px}
+  .row{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;padding:11px 12px;border-radius:13px;margin-bottom:9px;
+    background:var(--glass);border:1px solid var(--border)}
+  .row.best{background:rgba(16,185,129,.14);border-color:rgba(16,185,129,.45)}
+  .row .store{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--fg)}
+  .dotc{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--glass-strong);color:var(--fg-soft);font-weight:800;font-family:"Sora";font-size:.8rem}
+  .price{font-family:"Sora";font-weight:700;text-align:right;color:var(--fg)}
+  .row.best .price{color:var(--primary-2)}
+  .bar{grid-column:1 / -1;height:7px;border-radius:999px;background:var(--glass-strong);overflow:hidden}
+  .bar > i{display:block;height:100%;border-radius:999px;width:0;background:linear-gradient(90deg,var(--primary-700),var(--primary-2));transition:width 1.1s cubic-bezier(.22,1,.36,1)}
+  .row:not(.best) .bar > i{background:linear-gradient(90deg,#3b5c52,#52766b)}
+  .savetag{position:absolute;right:-12px;bottom:-14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#1a1203;
+    font-family:"Sora";font-weight:800;padding:12px 16px;border-radius:16px;box-shadow:0 16px 40px rgba(251,191,36,.4);font-size:.95rem}
+  .savetag b{font-size:1.25rem;display:block}
+
+  /* ===== Stats ===== */
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
+  @media(min-width:720px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center}
+  .stat .n{font-family:"Sora";font-weight:800;font-size:clamp(1.5rem,4vw,2rem);color:var(--fg);background:linear-gradient(120deg,var(--primary-2),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .l{font-size:.85rem;color:var(--fg-dim)}
+
+  /* ===== Sections ===== */
+  section{padding:64px 0;position:relative;z-index:2}
+  .eyebrow{color:var(--accent);font-weight:700;font-family:"Sora";letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+  .section-head{max-width:46ch;margin-bottom:40px}
+  .section-head h2{font-size:clamp(1.7rem,4.4vw,2.5rem);font-weight:700}
+
+  /* Bento */
+  .bento{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:760px){.bento{grid-template-columns:repeat(6,1fr)}.b-lg{grid-column:span 3}.b-sm{grid-column:span 3}}
+  .feat{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--border);
+    border-radius:var(--radius);padding:28px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+  .feat:hover{transform:translateY(-4px);border-color:var(--border-2);box-shadow:0 22px 50px rgba(0,0,0,.4)}
+  .feat::after{content:"";position:absolute;width:160px;height:160px;right:-40px;top:-40px;border-radius:50%;
+    background:radial-gradient(circle,rgba(16,185,129,.25),transparent 70%);opacity:0;transition:opacity .3s}
+  .feat:hover::after{opacity:1}
+  .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;color:var(--primary-2);
+    background:var(--glass-strong);border:1px solid var(--border-2)}
+  .feat h3{font-size:1.2rem}
+  .feat p{margin:0}
+
+  /* Steps */
+  .steps{display:grid;gap:18px;grid-template-columns:1fr;counter-reset:s}
+  @media(min-width:840px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative}
+  .step .num{counter-increment:s;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;
+    font-family:"Sora";font-weight:800;color:#04110d;background:linear-gradient(135deg,var(--primary-2),var(--primary-700))}
+  .step .num::after{content:counter(s)}
+
+  /* CTA band */
+  .cta{position:relative;overflow:hidden;border-radius:28px;padding:54px 28px;text-align:center;
+    background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(251,191,36,.12));border:1px solid var(--border-2)}
+  .cta h2{font-size:clamp(1.8rem,4.6vw,2.6rem)}
+  .cta p{color:var(--fg-soft);max-width:48ch;margin-inline:auto}
+
+  /* Footer */
+  footer{border-top:1px solid var(--border);padding:46px 0 38px;position:relative;z-index:2}
+  .fcols{display:flex;flex-direction:column;gap:22px;justify-content:space-between}
+  @media(min-width:768px){.fcols{flex-direction:row;align-items:flex-start}}
+  .disclosure{max-width:62ch}
+  .disclosure .b{font-weight:800;color:var(--fg);font-family:"Sora";margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  footer nav a{display:block;margin-bottom:10px;color:var(--fg-soft)}
+  footer nav a:hover{color:var(--primary-2)}
+  .copy{color:var(--fg-dim);margin-top:22px;font-size:.84rem}
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+    .mock-card{transform:none}
+    .bar > i{transition:none}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="logo" data-i18n="brand">il prezzo giusto</div>
-    <div class="lang"><button data-l="it" class="on" onclick="setLang('it')">IT</button><button data-l="en" onclick="setLang('en')">EN</button></div>
-  </header>
+<a href="#main" class="skip">Vai al contenuto</a>
+<div class="aurora" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<div class="grain" aria-hidden="true"></div>
 
+<header id="hdr">
+  <div class="wrap nav">
+    <span class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+      </span>
+      Spendomeno
+    </span>
+    <a href="#waitlist" class="btn btn-primary">Entra in lista</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
   <section class="hero">
-    <h1 data-i18n="h1">Lo stesso prodotto, prezzi diversi.<br>Noi troviamo il più basso.</h1>
-    <p data-i18n="sub">Salute, parafarmacia e benessere: i prezzi cambiano fino al 40% tra i negozi online. Confronta e paga il giusto.</p>
-    <form class="search" onsubmit="return false">
-      <input type="text" data-i18n-ph="ph" placeholder="Cerca un prodotto…">
-      <button data-i18n="cta">Confronta</button>
-    </form>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge"><span class="pulse" aria-hidden="true"></span> In arrivo · Lista d'attesa aperta</span>
+        <h1>Trova il <span class="grad">prezzo più basso</span>. Su tutto quello che compri online.</h1>
+        <p class="lead">Spendomeno confronta i prezzi di tanti negozi online e costruisce per te il <strong style="color:var(--fg)">carrello che costa meno</strong> — anche dividendo gli acquisti tra più negozi, quando conviene davvero.</p>
+
+        <form class="form" id="wl1" action="https://formspree.io/f/REPLACE_ME" method="POST" novalidate>
+          <span class="field">
+            <label for="email" class="sr-only">Il tuo indirizzo email</label>
+            <input type="email" id="email" name="email" inputmode="email" autocomplete="email" required placeholder="La tua email" />
+          </span>
+          <button type="submit" class="btn btn-accent">Avvisami al lancio</button>
+        </form>
+        <p class="form-help">Niente spam — solo un messaggio al lancio, con accesso anticipato.</p>
+        <div class="form-ok" id="form-ok" role="status" aria-live="polite">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Sei in lista! Ti scriviamo noi appena partiamo.
+        </div>
+
+        <div class="proof">
+          <span class="avs" aria-hidden="true"><span>A</span><span>M</span><span>S</span></span>
+          <span>Tante persone stanno già aspettando il lancio.</span>
+        </div>
+      </div>
+
+      <!-- Mock confronto prezzi -->
+      <div class="mock reveal">
+        <div class="mock-card" id="mock">
+          <div class="mock-top">
+            <span class="t">Confronto prezzo</span>
+            <span class="chip">Spedizione inclusa</span>
+          </div>
+          <div class="row best">
+            <span class="store"><span class="dotc" style="color:#04110d;background:linear-gradient(135deg,var(--primary-2),var(--primary-700))">A</span> Negozio A</span>
+            <span class="price">€ 23,90</span>
+            <span class="bar"><i data-w="42%"></i></span>
+          </div>
+          <div class="row">
+            <span class="store"><span class="dotc">B</span> Negozio B</span>
+            <span class="price">€ 29,50</span>
+            <span class="bar"><i data-w="64%"></i></span>
+          </div>
+          <div class="row">
+            <span class="store"><span class="dotc">C</span> Negozio C</span>
+            <span class="price">€ 34,10</span>
+            <span class="bar"><i data-w="86%"></i></span>
+          </div>
+          <div class="savetag">Risparmi <b>€ 10,20</b></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="wrap" style="margin-top:54px">
+      <div class="stats reveal">
+        <div class="stat"><div class="n" data-count="350" data-suffix="+">0</div><div class="l">Negozi confrontati</div></div>
+        <div class="stat"><div class="n" data-count="28" data-suffix="%">0</div><div class="l">Risparmio medio stimato</div></div>
+        <div class="stat"><div class="n" data-count="100" data-suffix="%">0</div><div class="l">Prezzi trasparenti</div></div>
+        <div class="stat"><div class="n" data-count="0" data-prefix="€" data-suffix="">0</div><div class="l">Costi per te</div></div>
+      </div>
+    </div>
   </section>
 
-  <div class="steps">
-    <div class="step"><b>1.</b> <span data-i18n="s1">Cerca il prodotto che ti serve.</span></div>
-    <div class="step"><b>2.</b> <span data-i18n="s2">Confrontiamo i prezzi dei negozi online.</span></div>
-    <div class="step"><b>3.</b> <span data-i18n="s3">Ti mostriamo dove costa meno.</span></div>
+  <!-- VALUE PROPS (bento) -->
+  <section id="perche" aria-labelledby="perche-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Perché Spendomeno</div>
+        <h2 id="perche-h">Pagare meno, senza perderci ore.</h2>
+        <p>Basta aprire dieci schede e confrontare a mano. Ci pensiamo noi, in un attimo.</p>
+      </div>
+      <div class="bento">
+        <div class="feat b-lg reveal">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Risparmio reale</h3>
+          <p>Ti mostriamo il prezzo più basso disponibile e quanto risparmi rispetto al negozio più caro. Numeri chiari, decisione facile.</p>
+        </div>
+        <div class="feat b-sm reveal">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Confronto trasparente</h3>
+          <p>Prezzi a confronto in chiaro, spedizione inclusa nel calcolo. Nessuna sorpresa al checkout.</p>
+        </div>
+        <div class="feat b-sm reveal">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <h3>Carrello ottimizzato</h3>
+          <p>Più articoli da comprare? Calcoliamo la combinazione migliore, anche divisa tra più negozi, per spendere il minimo totale.</p>
+        </div>
+        <div class="feat b-lg reveal">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+          <h3>Veloce e automatico</h3>
+          <p>Dici cosa ti serve, il resto lo facciamo noi: confronto, spedizioni e carrello migliore pronti in pochi secondi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="come" aria-labelledby="come-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Come funziona</div>
+        <h2 id="come-h">Tre passi, e paghi meno.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="num" aria-hidden="true"></div><h3>Dicci cosa ti serve</h3><p>Aggiungi alla lista i prodotti che vuoi comprare.</p></div>
+        <div class="step reveal"><div class="num" aria-hidden="true"></div><h3>Confrontiamo per te</h3><p>Cerchiamo il prezzo su tanti negozi affidabili, spedizione compresa.</p></div>
+        <div class="step reveal"><div class="num" aria-hidden="true"></div><h3>Ricevi il carrello migliore</h3><p>Ti diamo la combinazione che costa meno e i link per completare l'acquisto.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="waitlist" aria-labelledby="waitlist-h">
+    <div class="wrap">
+      <div class="cta reveal">
+        <h2 id="waitlist-h">Vuoi provarlo per primo?</h2>
+        <p>Iscriviti alla lista d'attesa: accesso anticipato, zero impegno, zero costi.</p>
+        <form class="form" id="wl2" action="https://formspree.io/f/REPLACE_ME" method="POST" novalidate style="margin:22px auto 0;justify-content:center">
+          <span class="field">
+            <label for="email2" class="sr-only">Il tuo indirizzo email</label>
+            <input type="email" id="email2" name="email" inputmode="email" autocomplete="email" required placeholder="La tua email" />
+          </span>
+          <button type="submit" class="btn btn-accent">Avvisami al lancio</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="disclosure">
+        <div class="b"><span class="logo" aria-hidden="true" style="width:28px;height:28px;border-radius:8px;display:inline-grid;place-items:center;color:#04110d;background:linear-gradient(135deg,var(--primary-2),var(--primary-700))"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></span> Spendomeno</div>
+        <p><strong style="color:var(--fg-soft)">Trasparenza affiliazione.</strong> Alcuni link presenti su Spendomeno sono link di affiliazione: se acquisti tramite questi link potremmo ricevere una piccola commissione dal negozio, <strong style="color:var(--fg-soft)">senza alcun costo aggiuntivo per te</strong>. Questo non influenza i prezzi che ti mostriamo né i risultati del confronto.</p>
+      </div>
+      <nav aria-label="Link legali">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="mailto:info@spendomeno.it">Contatti</a>
+      </nav>
+    </div>
+    <p class="copy">© <span id="yr"></span> Spendomeno · Servizio in fase di sviluppo.</p>
   </div>
+</footer>
 
-  <h2 class="section-t" data-i18n="cmp">Confronti di oggi</h2>
-  <p class="section-s" data-i18n="cmps">Prezzi reali rilevati dai negozi online.</p>
-  <div class="grid">
-      <article class="card">
-        <img src="https://www.farmaciasoccavo.it/media/catalog/product/8/_/8_4_5.jpg" alt="Narhinel Soluzione Fisiologica 20 Flaconcini Monodose 5 ml" loading="lazy">
-        <div class="card-b">
-          <h3>Narhinel Soluzione Fisiologica 20 Flaconcini Monodose 5 ml</h3>
-          <div class="rating">★★★★★ <span>4.7</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>2,29 €</b>
-            <s>4,00 €</s></div>
-          <div class="meta"><span class="save">-43%</span>
-            <span>4 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT0/256/340/41/IT025634041-p1.jpg" alt="NUROFEN 200 mg compresse rivestite" loading="lazy">
-        <div class="card-b">
-          <h3>NUROFEN 200 mg compresse rivestite</h3>
-          <div class="rating">★★★★★ <span>4.9</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>5,79 €</b>
-            <s>8,99 €</s></div>
-          <div class="meta"><span class="save">-36%</span>
-            <span>3 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://meafarma.it/image/cache/catalog/921131898%201-500x500.jpg" alt="Bioderma Sensibio H2O 500 ml Acqua Micellare per Pelli Sensibili" loading="lazy">
-        <div class="card-b">
-          <h3>Bioderma Sensibio H2O 500 ml Acqua Micellare per Pelli Sensibili</h3>
-          <div class="rating"> <span></span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>9,18 €</b>
-            <s>13,59 €</s></div>
-          <div class="meta"><span class="save">-32%</span>
-            <span>3 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://meafarma.it/image/cache/catalog/023673104%202-500x500.jpg" alt="Imodium Diarrea Acuta 12 Capsule Molli Per Intestino" loading="lazy">
-        <div class="card-b">
-          <h3>Imodium Diarrea Acuta 12 Capsule Molli Per Intestino</h3>
-          <div class="rating">★★★★☆ <span>4.3</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>10,35 €</b>
-            <s>14,89 €</s></div>
-          <div class="meta"><span class="save">-30%</span>
-            <span>4 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT0/356/180/38/IT035618038-p1.jpg" alt="MomentAct 400 mg 10 Capsule Molli Ibuprofene Antinfiammatorio" loading="lazy">
-        <div class="card-b">
-          <h3>MomentAct 400 mg 10 Capsule Molli Ibuprofene Antinfiammatorio</h3>
-          <div class="rating">★★★★★ <span>4.9</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>6,99 €</b>
-            <s>9,99 €</s></div>
-          <div class="meta"><span class="save">-30%</span>
-            <span>3 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT0/238/340/68/IT023834068-p1.jpg" alt="Fluifort 9% Carbocisteina Sciroppo Mucolitico 200 ml Con Misurino" loading="lazy">
-        <div class="card-b">
-          <h3>Fluifort 9% Carbocisteina Sciroppo Mucolitico 200 ml Con Misurino</h3>
-          <div class="rating">★★★★★ <span>4.8</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>7,49 €</b>
-            <s>10,59 €</s></div>
-          <div class="meta"><span class="save">-29%</span>
-            <span>3 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT0/349/361/71/IT034936171-p1.jpg" alt="Fluimucil Mucolitico 600 mg Compresse Effervescenti Aroma Limone" loading="lazy">
-        <div class="card-b">
-          <h3>Fluimucil Mucolitico 600 mg Compresse Effervescenti Aroma Limone</h3>
-          <div class="rating"> <span></span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>7,14 €</b>
-            <s>9,69 €</s></div>
-          <div class="meta"><span class="save">-26%</span>
-            <span>3 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://www.farmaciasoccavo.it/media/catalog/product/2/3/23_5_17.jpg" alt="Fitostimoline 15% Crema 32g" loading="lazy">
-        <div class="card-b">
-          <h3>Fitostimoline 15% Crema 32g</h3>
-          <div class="rating">★★★★★ <span>4.8</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>11,79 €</b>
-            <s>15,99 €</s></div>
-          <div class="meta"><span class="save">-26%</span>
-            <span>3 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://1000farmacie-s3-production-images.gumlet.io/product_images/018554081/58vge8lphbx849qkvmr59jg34xh2/polaramin_crema_dermatologica_25_g_1.jpg?height=1200&amp;width=1200" alt="Polaramin Crema 1% - Trattamento delle irritazioni della pelle - 25 g" loading="lazy">
-        <div class="card-b">
-          <h3>Polaramin Crema 1% - Trattamento delle irritazioni della pelle - 25 g</h3>
-          <div class="rating">★★★★★ <span>4.7</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>5,99 €</b>
-            <s>7,99 €</s></div>
-          <div class="meta"><span class="save">-25%</span>
-            <span>5 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT9/356/625/97/IT935662597-p10.jpg" alt="Supradyn Ricarica Integratore 30 Compresse Multivitaminico e Minerali" loading="lazy">
-        <div class="card-b">
-          <h3>Supradyn Ricarica Integratore 30 Compresse Multivitaminico e Minerali</h3>
-          <div class="rating">★★★★★ <span>5.0</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>14,75 €</b>
-            <s>19,39 €</s></div>
-          <div class="meta"><span class="save">-24%</span>
-            <span>6 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://www.farmaciasoccavo.it/media/catalog/product/H/0/H0000635.jpg" alt="Voltadol 10 Cerotti Medicati 140 mg Diclofenac Sodico" loading="lazy">
-        <div class="card-b">
-          <h3>Voltadol 10 Cerotti Medicati 140 mg Diclofenac Sodico</h3>
-          <div class="rating">★★★★★ <span>4.7</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>16,45 €</b>
-            <s>21,54 €</s></div>
-          <div class="meta"><span class="save">-24%</span>
-            <span>4 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT9/741/092/01/IT974109201-p1.jpg" alt="Cerave Lozione Idratante Pelle Normale/Secca Idratazione 24 Ore 236ml" loading="lazy">
-        <div class="card-b">
-          <h3>Cerave Lozione Idratante Pelle Normale/Secca Idratazione 24 Ore 236ml</h3>
-          <div class="rating">★★★★★ <span>5.0</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>10,39 €</b>
-            <s>13,57 €</s></div>
-          <div class="meta"><span class="save">-23%</span>
-            <span>5 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT0/421/540/29/IT042154029-p1.jpg" alt="Lasonil Antidolore Gel 10% - Gel antidolorifico per traumi muscolari ed articolari - 120 g" loading="lazy">
-        <div class="card-b">
-          <h3>Lasonil Antidolore Gel 10% - Gel antidolorifico per traumi muscolari ed articolari - 120 g</h3>
-          <div class="rating">★★★★★ <span>4.9</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>10,39 €</b>
-            <s>13,47 €</s></div>
-          <div class="meta"><span class="save">-23%</span>
-            <span>4 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT9/339/063/54/IT933906354-p1.jpg" alt="Polase Classico Magnesio e Potassio Sali Minerali Limone, 24 bustine" loading="lazy">
-        <div class="card-b">
-          <h3>Polase Classico Magnesio e Potassio Sali Minerali Limone, 24 bustine</h3>
-          <div class="rating">★★★★★ <span>4.9</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>14,19 €</b>
-            <s>18,09 €</s></div>
-          <div class="meta"><span class="save">-22%</span>
-            <span>3 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://www.farmaciasoccavo.it/media/catalog/product/1/3/13046040_1_1.jpg" alt="Enterogermina 2 Miliardi 20 Flaconcini Fermenti Lattici" loading="lazy">
-        <div class="card-b">
-          <h3>Enterogermina 2 Miliardi 20 Flaconcini Fermenti Lattici</h3>
-          <div class="rating">★★★★★ <span>4.9</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>18,09 €</b>
-            <s>23,03 €</s></div>
-          <div class="meta"><span class="save">-21%</span>
-            <span>5 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://cdn.redcare.it/images/IT0/421/540/17/IT042154017-p1.jpg" alt="Lasonil Antidolorifico e Antinfiammatorio contro Dolore 50 g" loading="lazy">
-        <div class="card-b">
-          <h3>Lasonil Antidolorifico e Antinfiammatorio contro Dolore 50 g</h3>
-          <div class="rating"> <span></span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>7,47 €</b>
-            <s>9,49 €</s></div>
-          <div class="meta"><span class="save">-21%</span>
-            <span>3 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://www.farmaciasoccavo.it/media/catalog/product/4/_/4_3_8.jpg" alt="Tachipirina 120 mg/ 5 ml Sciroppo Azione Analgesica ed Antipiretica" loading="lazy">
-        <div class="card-b">
-          <h3>Tachipirina 120 mg/ 5 ml Sciroppo Azione Analgesica ed Antipiretica</h3>
-          <div class="rating">★★★★★ <span>5.0</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>5,99 €</b>
-            <s>7,49 €</s></div>
-          <div class="meta"><span class="save">-20%</span>
-            <span>4 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://images.ctfassets.net/i5oh5hzamkwo/5xoJO1bDMIEgDRFT3MWnFx/1f5ff8e27d908a90b051968215e2e656/productImage-935688945-7867725_1.jpg" alt="Armolipid Plus 60 Compresse Per la Regolare Funzionalità Cardiovascolare" loading="lazy">
-        <div class="card-b">
-          <h3>Armolipid Plus 60 Compresse Per la Regolare Funzionalità Cardiovascolare</h3>
-          <div class="rating">★★★★★ <span>4.9</span></div>
-          <div class="price"><span class="from" data-i18n="from">da</span> <b>24,89 €</b>
-            <s>30,49 €</s></div>
-          <div class="meta"><span class="save">-18%</span>
-            <span>4 <span data-i18n="shops">farmacie</span></span></div>
-        </div>
-      </article>
-  </div>
-
-  <p class="stat"><b>580</b> <span data-i18n="prod">prodotti confrontati in</span> <b>32</b> <span data-i18n="shopslong">negozi online</span></p>
-
-  <footer>
-    <p data-i18n="foot">Confrontiamo i prezzi pubblici di negozi online di salute e benessere. I prezzi possono variare: verifica sempre sul sito del venditore.</p>
-  </footer>
-</div>
 <script>
-var I18N={
- it:{brand:"il prezzo giusto",h1:"Lo stesso prodotto, prezzi diversi.<br>Noi troviamo il più basso.",sub:"Salute, parafarmacia e benessere: i prezzi cambiano fino al 40% tra i negozi online. Confronta e paga il giusto.",ph:"Cerca un prodotto…",cta:"Confronta",s1:"Cerca il prodotto che ti serve.",s2:"Confrontiamo i prezzi dei negozi online.",s3:"Ti mostriamo dove costa meno.",cmp:"Confronti di oggi",cmps:"Prezzi reali rilevati dai negozi online.",from:"da",shops:"negozi",prod:"prodotti confrontati in",shopslong:"negozi online",foot:"Confrontiamo i prezzi pubblici di negozi online di salute e benessere. I prezzi possono variare: verifica sempre sul sito del venditore."},
- en:{brand:"the right price",h1:"Same product, different prices.<br>We find the lowest one.",sub:"Health, pharmacy and wellness: prices vary by up to 40% across online shops. Compare and pay the right price.",ph:"Search a product…",cta:"Compare",s1:"Search the product you need.",s2:"We compare prices across online shops.",s3:"We show you where it costs less.",cmp:"Today's comparisons",cmps:"Real prices collected from online shops.",from:"from",shops:"shops",prod:"products compared across",shopslong:"online shops",foot:"We compare public prices of health & wellness online shops. Prices may change: always check on the seller's website."}
-};
-function setLang(l){
- document.documentElement.lang=l;
- document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});
- var d=I18N[l];
- document.querySelectorAll('[data-i18n]').forEach(function(e){var k=e.getAttribute('data-i18n');if(d[k]!=null)e.innerHTML=d[k]});
- document.querySelectorAll('[data-i18n-ph]').forEach(function(e){var k=e.getAttribute('data-i18n-ph');if(d[k]!=null)e.placeholder=d[k]});
-}
-setLang((navigator.language||'it').slice(0,2)==='en'?'en':'it');
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Header scroll state
+  var hdr = document.getElementById('hdr');
+  addEventListener('scroll', function(){ hdr.classList.toggle('scrolled', scrollY > 12); }, {passive:true});
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Reveal + counters + bars via IntersectionObserver
+  function animateCount(el){
+    var target = parseFloat(el.dataset.count||'0'), suf = el.dataset.suffix||'', pre = el.dataset.prefix||'';
+    if(reduce || target===0){ el.textContent = pre + target + suf; return; }
+    var t0=null, dur=1300;
+    function tick(ts){ t0=t0||ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
+      el.textContent = pre + Math.round(target*e) + suf; if(p<1) requestAnimationFrame(tick); }
+    requestAnimationFrame(tick);
+  }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting) return;
+      en.target.classList.add('in');
+      en.target.querySelectorAll && en.target.querySelectorAll('[data-count]').forEach(animateCount);
+      if(en.target.id==='mock' || en.target.classList.contains('mock')){
+        en.target.querySelectorAll('.bar > i').forEach(function(i){ i.style.width = i.dataset.w; });
+      }
+      io.unobserve(en.target);
+    });
+  },{threshold:.2});
+  document.querySelectorAll('.reveal, #mock').forEach(function(el){ io.observe(el); });
+  // kick mock bars if mock visible immediately
+  setTimeout(function(){ document.querySelectorAll('#mock .bar > i').forEach(function(i){ if(!i.style.width) i.style.width=i.dataset.w; }); }, 400);
+
+  // Waitlist form: feedback immediato. Sostituire REPLACE_ME con endpoint reale (Formspree/Google Form).
+  function handle(form){
+    form.addEventListener('submit', function(e){
+      var input = form.querySelector('input[type=email]');
+      if(!input.value || !input.checkValidity()) return;
+      var ep = form.getAttribute('action')||'';
+      if(ep.indexOf('REPLACE_ME')!==-1){ e.preventDefault(); ok(); return; }
+      e.preventDefault();
+      fetch(ep,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).catch(function(){}).finally(ok);
+    });
+  }
+  function ok(){ var o=document.getElementById('form-ok'); if(o) o.style.display='flex';
+    var a=document.getElementById('wl1'), b=document.getElementById('wl2'); if(a)a.reset(); if(b)b.reset();
+    if(o) o.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'}); }
+  ['wl1','wl2'].forEach(function(id){ var f=document.getElementById(id); if(f) handle(f); });
 </script>
 </body>
 </html>
